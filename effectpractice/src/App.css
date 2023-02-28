@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.header {
+  background-color: aquamarine;
+  text-align: center;
+  padding: 8px 0px 8px 0px;
+}
+
+.data {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 5px;
+}
