@@ -5,27 +5,34 @@ import Header from "./component/Header";
 import About from "./component/About";
 import Contact from "./component/Contact";
 import Error from "./component/Error";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Mail from "./component/Mail";
+import Insta from "./component/Insta";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Home />
-      <Routes>
-        {/* Home */}
-        <Route path="/" element={<Home />} />
+    <Router>
+      <div>
+        <Header />
+        {/* <Home /> */}
+        <Routes>
+          {/* Home */}
+          <Route path="/" element={<Home />} />
 
-        {/* About */}
-        <Route path="/about" element={<About />} />
+          {/* About */}
+          <Route path="/about" element={<About />} />
 
-        {/* Contact */}
-        <Route path="/contact" element={<Contact />} />
+          {/* Contact */}
+          <Route path="/contact" element={<Contact />}>
+            <Route path="/insta" element={<Insta />} />
+            <Route path="/mail" element={<Mail />} />
+          </Route>
 
-        <Route path="*" element={<Error />} />
-      </Routes>
-      {/* {console.log("jsx")} */}
-    </div>
+          <Route path="*" element={<Error />} />
+        </Routes>
+        {/* {console.log("jsx")} */}
+      </div>
+    </Router>
   );
 }
 

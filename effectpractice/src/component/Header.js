@@ -1,14 +1,37 @@
-import React from 'react'
-import {Link} from "react-router-dom" 
+import React from "react";
+import { NavLiNavLink, nk, NavNavLink, NavLink } from "react-router-dom";
 
 const Header = () => {
-  return (
-    <div>
-      <Link to={"/"}><h1>Home</h1></Link>
-      <Link to={"/about"}> <h1>About</h1></Link>
-      <Link to={"/contact"}> <h1>Contact</h1></Link>
-    </div>
-  )
-}
+  const navNavLinkStyles = ({ isActive }) => {
+    return {
+      textDecoration: isActive ? "underline" : "none",
+      color: isActive ? "red" : "white",
+      fontSize: "25px",
+    };
+  };
 
-export default Header
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: "10px",
+        justifyContent: "space-around",
+        cursor: "pointer",
+        backgroundColor: "#50c7a5",
+        marginBottom: "50px",
+      }}
+    >
+      <NavLink style={navNavLinkStyles} to={"/"}>
+        Home
+      </NavLink>
+      <NavLink style={navNavLinkStyles} to={"/about"}>
+        About
+      </NavLink>
+      <NavLink style={navNavLinkStyles} to={"/contact"}>
+        Contact
+      </NavLink>
+    </div>
+  );
+};
+
+export default Header;
