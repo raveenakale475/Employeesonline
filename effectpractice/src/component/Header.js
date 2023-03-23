@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLiNavLink, nk, NavNavLink, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 const Header = () => {
   const navNavLinkStyles = ({ isActive }) => {
@@ -21,7 +21,7 @@ const Header = () => {
         marginBottom: "50px",
       }}
     >
-      <NavLink style={navNavLinkStyles} to={"/"}>
+      <NavLink style={navNavLinkStyles} to={"/app"}>
         Home
       </NavLink>
       <NavLink style={navNavLinkStyles} to={"/about"}>

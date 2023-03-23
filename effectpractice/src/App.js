@@ -7,6 +7,7 @@ import Contact from "./component/Contact";
 import Error from "./component/Error";
 import Mail from "./component/Mail";
 import Insta from "./component/Insta";
+import UserDetails from "./component/UserDetails";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,18 +15,23 @@ function App() {
     <Router>
       <div>
         <Header />
-        {/* <Home /> */}
+
         <Routes>
           {/* Home */}
-          <Route path="/" element={<Home />} />
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="/app" element={<Home />} />
+          </Route>
+          <Route path="/app/:userId" element={<UserDetails />} />
 
           {/* About */}
           <Route path="/about" element={<About />} />
 
           {/* Contact */}
           <Route path="/contact" element={<Contact />}>
-            <Route path="/insta" element={<Insta />} />
-            <Route path="/mail" element={<Mail />} />
+            <Route index element={<Insta />} />
+            <Route path="insta" element={<Insta />} />
+            <Route path="mail" element={<Mail />} />
           </Route>
 
           <Route path="*" element={<Error />} />
