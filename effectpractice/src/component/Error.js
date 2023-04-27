@@ -5,7 +5,7 @@ const Error = () => {
   const navigate = useNavigate()
   return (
     <>
-      <div>404 page not found</div>
+      <div>Error 404 page not found</div>
       <button onClick={()=>navigate(-1)}>Go Back</button>
     </>
   )
